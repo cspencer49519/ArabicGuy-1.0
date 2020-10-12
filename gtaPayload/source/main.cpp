@@ -11,7 +11,7 @@ char* InfoText;
 
 float
  CenterDraw = 0.26f,
- Menu_X = 0.758,
+ //Menu_X = 0.758,
  Title_X = 0.6350,
  Cunt = 0.648,
  CuntStat = 0.853,
@@ -1519,7 +1519,7 @@ void SetupActions()
 	if (CAM::IS_GAMEPLAY_HINT_ACTIVE())
 			{
 				CAM::STOP_GAMEPLAY_HINT(0);
-				GRAPHICS::_STOP_SCREEN_EFFECT("FocusIn"); //FocusOut
+				//GRAPHICS::_STOP_SCREEN_EFFECT("FocusIn"); //FocusOut
 			}
 	if (NumMenu != Closed)
 		{
@@ -1862,7 +1862,7 @@ CreateObj = false;
 	}
 	if(ThunderLightning)
 	{
-		GAMEPLAY::_CREATE_LIGHTNING_THUNDER();
+		GAMEPLAY::FORCE_LIGHTNING_FLASH();
 	}
 	if(testbg)
 	{
@@ -4725,47 +4725,47 @@ ENTITY::SET_ENTITY_INVINCIBLE(gameped[i], 0);
 		if(GET() == 1)
 		{
 			if(CloudTypes == 1)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("RAIN", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("RAIN", 0);
 			else if(CloudTypes == 2)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Stormy 01", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Stormy 01", 0);
 			else if(CloudTypes == 3)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Cirrus", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Cirrus", 0);
 			else if(CloudTypes == 4)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Wispy", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Wispy", 0);
 			else if(CloudTypes == 5)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("cirrocumulus", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("cirrocumulus", 0);
 			else if(CloudTypes == 6)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Snowy 01", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Snowy 01", 0);
 			else if(CloudTypes == 7)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("CONTRAILS", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("CONTRAILS", 0);
 			else if(CloudTypes == 8)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Cloudy 01", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Cloudy 01", 0);
 			else if(CloudTypes == 9)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("horizonband1", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("horizonband1", 0);
 			else if(CloudTypes == 10)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("horizonband2", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("horizonband2", 0);
 			else if(CloudTypes == 11)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Puffs", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Puffs", 0);
 			else if(CloudTypes == 12)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Horizon", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Horizon", 0);
 			else if(CloudTypes == 13)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Clear 01", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Clear 01", 0);
 			else if(CloudTypes == 14)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("altostratus", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("altostratus", 0);
 			else if(CloudTypes == 15)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Nimbus", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Nimbus", 0);
 			else if(CloudTypes == 16)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("cirrocumulus", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("cirrocumulus", 0);
 			else if(CloudTypes == 17)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("stratoscumulus", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("stratoscumulus", 0);
 			else if(CloudTypes == 18)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("horizonband3", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("horizonband3", 0);
 			else if(CloudTypes == 19)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("Stripey", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("Stripey", 0);
 			else if(CloudTypes == 20)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("horsey", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("horsey", 0);
 			else if(CloudTypes == 21)
-				GAMEPLAY::_SET_CLOUD_HAT_TRANSITION("shower", 0);
+				GAMEPLAY::LOAD_CLOUD_HAT("shower", 0);
 		}
 		else if(GET() == 2)
 		{
@@ -4830,13 +4830,13 @@ ENTITY::SET_ENTITY_INVINCIBLE(gameped[i], 0);
 		     VEHICLE::SET_ALL_LOW_PRIORITY_VEHICLE_GENERATORS_ACTIVE(1);
 		     VEHICLE::SET_NUMBER_OF_PARKED_VEHICLES(1);
 		     GRAPHICS::DISABLE_VEHICLE_DISTANTLIGHTS(0);
-		    VEHICLE:: _DISPLAY_DISTANT_VEHICLES(1);
+		     //VEHICLE:: _DISPLAY_DISTANT_VEHICLES(1);
 	      }
 		}
 		else if(GET() == 12)
 		{
 			Blackout = !Blackout;
-			GRAPHICS::_SET_BLACKOUT(Blackout);
+			//GRAPHICS::_SET_BLACKOUT(Blackout);
 		}
 		else if(GET() == 13)
 		{

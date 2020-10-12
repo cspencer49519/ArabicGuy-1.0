@@ -64,32 +64,12 @@ int kernelPayload(struct thread *td, void* uap) {
 	// patch memcpy first
 	*(uint8_t *)(ptrKernel + 0x003C15BD) = 0xEB;
 
-	// // patch sceSblACMgrIsAllowedSystemLevelDebugging
-	// memcpy((void *)(ptrKernel + 0x00233BD0), "\x48\xC7\xC0\x01\x00\x00\x00\xC3", 8);
-	//
-	// // patch sceSblACMgrHasMmapSelfCapability
-	// memcpy((void *)(ptrKernel + 0x00233C40), "\x48\xC7\xC0\x01\x00\x00\x00\xC3", 8);
-	//
-	// // patch sceSblACMgrIsAllowedToMmapSelf
-	// memcpy((void *)(ptrKernel + 0x00233C50), "\x48\xC7\xC0\x01\x00\x00\x00\xC3", 8);
-	//
-	// // disable sysdump_perform_dump_on_fatal_trap
-	// // will continue execution and give more information on crash, such as rip
-	// *(uint8_t *)(ptrKernel + 0x00784120) = 0xC3;
-	//
-	// // self patches
-	// memcpy((void *)(ptrKernel + 0x000AD2E4), "\x31\xC0\x90\x90\x90", 5);
-	//
-	// // patch vm_map_protect check
-	// memcpy((void *)(ptrKernel + 0x00451DB8), "\x90\x90\x90\x90\x90\x90", 6);
-
 	// Disable ptrace check
 	ptrKernel[KERN_PTRACE_CHECK] = 0xEB;
 	memcpy((void *)(ptrKernel + 0x10FD22), "\xE9\xE2\x02\x00\x00", 5);
 
 	// Disable process aslr
 	*(uint8_t *)&ptrKernel[KERN_PROCESS_ASLR] = 0xEB;
-	//*(uint16_t*)&ptrKernel[KERN_PROCESS_ASLR] = 0x9090;
 
 	// Enable write protection
 	writeCr0(cr0);

@@ -1,7 +1,5 @@
 #include "invoker.h"
 
-#define NativeTableAddress 0x3644A28
-
 NativeArg_s nativeArg;
 u64 args[30];
 
