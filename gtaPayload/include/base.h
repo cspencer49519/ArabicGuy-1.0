@@ -1,4 +1,4 @@
-int Menu_X = 1000;
+//int Menu_X = 1000;
 int CurrentSelectedIndex = 0;
 float SelectedIndexSize = 0.6;
 bool IncreaseSelectedIndexSize = false;

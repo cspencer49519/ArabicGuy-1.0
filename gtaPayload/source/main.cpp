@@ -11,7 +11,7 @@ char* InfoText;
 
 float
  CenterDraw = 0.26f,
- //Menu_X = 0.758,
+ Menu_X = 0.758,
  Title_X = 0.6350,
  Cunt = 0.648,
  CuntStat = 0.853,

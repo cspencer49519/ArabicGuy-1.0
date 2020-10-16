@@ -64,11 +64,11 @@ void DRAW_TEXT(char* Text, float X, float Y, float S_X, float S_Y, int Font, boo
 
 void DrawTitle(char* Title)
 {
-	DRAW_TEXT(Title, PixelX(Menu_X + 1), PixelY(35), 0.7, 0.7, 0, false, false, true, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
-	DRAW_TEXT(Title, PixelX(Menu_X - 1), PixelY(35), 0.7, 0.7, 0, false, false, true, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
-	DRAW_TEXT(Title, PixelX(Menu_X), PixelY(35 + 1), 0.7, 0.7, 0, false, false, true, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
-	DRAW_TEXT(Title, PixelX(Menu_X), PixelY(35 - 1), 0.7, 0.7, 0, false, false, true, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
-	DRAW_TEXT(Title, PixelX(Menu_X), PixelY(35), 0.7, 0.7, 0, false, false, true, false, 240, 240, 240, 240);
+	//DRAW_TEXT(Title, PixelX(Menu_X + 1), PixelY(35), 0.7, 0.7, 0, false, false, true, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
+	//DRAW_TEXT(Title, PixelX(Menu_X - 1), PixelY(35), 0.7, 0.7, 0, false, false, true, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
+	//DRAW_TEXT(Title, PixelX(Menu_X), PixelY(35 + 1), 0.7, 0.7, 0, false, false, true, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
+	//DRAW_TEXT(Title, PixelX(Menu_X), PixelY(35 - 1), 0.7, 0.7, 0, false, false, true, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
+	//DRAW_TEXT(Title, PixelX(Menu_X), PixelY(35), 0.7, 0.7, 0, false, false, true, false, 240, 240, 240, 240);
 }
 void DRAW_SPRITE(char* TextOne, char* TextTwo, float X, float Y, float Width, float Height, float Rotation, int R = 255, int G = 255, int B = 255, int A = 255)
 {
@@ -80,36 +80,41 @@ void DrawOption(char* Option, int i, OptionType Type, bool Selected = false)
 {
 	if (Type == Disabled)
 	{
-		DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(75) + PixelY(30 * i), 0.4, 0.4, 0, false, false, false, false, 80, 80, 80, 240);
+		//DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(75) + PixelY(30 * i), 0.4, 0.4, 0, false, false, false, false, 80, 80, 80, 240);
 	}
 	else
 	{
 		if (Selected)
 		{
-			DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(72 + 1) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
-			DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(72 - 1) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
-			DRAW_TEXT(Option, PixelX(Menu_X + 1) - PixelX(130), PixelY(72) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
-			DRAW_TEXT(Option, PixelX(Menu_X - 1) - PixelX(130), PixelY(72) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
-			DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(72) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, 240, 240, 240, 240);
+			// DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(72 + 1) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
+			// DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(72 - 1) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
+			// DRAW_TEXT(Option, PixelX(Menu_X + 1) - PixelX(130), PixelY(72) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
+			// DRAW_TEXT(Option, PixelX(Menu_X - 1) - PixelX(130), PixelY(72) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, SelectColour.r, SelectColour.g, SelectColour.b, 220);
+			// DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(72) + PixelY(30 * i), SelectedIndexSize, SelectedIndexSize, 0, false, false, false, false, 240, 240, 240, 240);
 		}
 		else
 		{
-			DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(75) + PixelY(30 * i), 0.4, 0.4, 0, false, false, false, false, 240, 240, 240, 240);
+			//DRAW_TEXT(Option, PixelX(Menu_X) - PixelX(130), PixelY(75) + PixelY(30 * i), 0.4, 0.4, 0, false, false, false, false, 240, 240, 240, 240);
 		}
 	}
 	if (Type == Checked)
-		DRAW_SPRITE("commonmenu", "shop_box_tick", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
+		return;
+		//DRAW_SPRITE("commonmenu", "shop_box_tick", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
 	else if (Type == UnChecked)
-		DRAW_SPRITE("commonmenu", "shop_box_blank", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
+		return;
+		//DRAW_SPRITE("commonmenu", "shop_box_blank", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
 	else if (Type == RadioUnChecked)
 	{
-		DRAW_SPRITE("commonmenu", "common_medal", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
-		DRAW_SPRITE("commonmenu", "common_medal", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03 - 0.003, 0.05 - 0.005, 0, 0, 0, 0);
+		return;
+		//DRAW_SPRITE("commonmenu", "common_medal", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
+		//DRAW_SPRITE("commonmenu", "common_medal", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03 - 0.003, 0.05 - 0.005, 0, 0, 0, 0);
 	}
 	else if (Type == RadioChecked)
-		DRAW_SPRITE("commonmenu", "common_medal", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
+		return;
+		//DRAW_SPRITE("commonmenu", "common_medal", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
 	else if (Type == Submenu)
-		DRAW_SPRITE("mpleaderboard", "leaderboard_plus_icon", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
+		return;
+		//DRAW_SPRITE("mpleaderboard", "leaderboard_plus_icon", PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
 	//else if (Type == Custom)
 		//DRAW_SPRITE(ImageMain, ImageAct, PixelX(Menu_X + 95), PixelY(90) + PixelY(30 * i), 0.03, 0.05, 0);
 }
