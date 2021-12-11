@@ -62,11 +62,11 @@ int kernelPayload(struct thread *td, void* uap) {
 	writeCr0(cr0 & ~X86_CR0_WP);
 
 	// patch memcpy first
-	*(uint8_t *)(ptrKernel + 0x003C15BD) = 0xEB;
+	*(uint8_t *)(ptrKernel + 0x2F04D) = 0xEB;
 
 	// Disable ptrace check
 	ptrKernel[KERN_PTRACE_CHECK] = 0xEB;
-	memcpy((void *)(ptrKernel + 0x10FD22), "\xE9\xE2\x02\x00\x00", 5);
+	memcpy((void *)(ptrKernel + 0x44DAF), "\xE9\x7C\x02\x00\x00", 5);
 
 	// Disable process aslr
 	*(uint8_t *)&ptrKernel[KERN_PROCESS_ASLR] = 0xEB;
